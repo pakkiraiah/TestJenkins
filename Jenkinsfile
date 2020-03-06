@@ -6,7 +6,9 @@ pipeline {
             steps {
 			    echo 'Building..'
 				echo 'Maven Version..'
-                sh 'mvn --version'
+				def mymvn = tool name: 'MyMaven', type: 'maven'
+				def mycmd="${}/bin/mvn"
+                sh "${mycmd} --version"
             }
         }
         stage('Test') {
