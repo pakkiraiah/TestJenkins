@@ -3,12 +3,11 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-			    echo 'Building..'
-				echo 'Maven Version..'
-				def mymvn = tool name: 'MyMaven', type: 'maven'
-				def mycmd="${mymvn}/bin/mvn"
-                sh "${mycmd} --version"
+             echo 'Building..'
+	     echo 'Maven Version..'
+	     def mymvn = tool name: 'MyMaven', type: 'maven'
+	     def mycmd="${mymvn}/bin/mvn"
+             sh "${mycmd} --version"
             }
         }
         stage('Test') {
