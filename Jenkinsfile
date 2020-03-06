@@ -1,10 +1,11 @@
 pipeline {
     agent any 
-	stages('SCM CHECKOUT'){
-		echo 'Checkout'
+	
+    stages {
+	stage('SCM CHECKOUT'){
+		echo "Checkout"
 		git credentialsId: '68d40146-7257-4801-87af-39317bca5899', url: 'https://github.com/pakkiraiah/TestJenkins.git'
 	}
-    stages {
         stage('Build') {
              echo 'Building..'
 	     echo 'Maven Version..'
