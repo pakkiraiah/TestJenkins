@@ -7,7 +7,7 @@ pipeline {
 			    echo 'Building..'
 				echo 'Maven Version..'
 				def mymvn = tool name: 'MyMaven', type: 'maven'
-				def mycmd="${}/bin/mvn"
+				def mycmd="${mymvn}/bin/mvn"
                 sh "${mycmd} --version"
             }
         }
